@@ -1,0 +1,23 @@
+{
+  "name": "shopping-cart-challenge",
+  "version": "1.0.0",
+  "description": "an basic project to know more about it JavaScript.",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "test": "no-one"
+  },
+  
+  "repository": {
+    "type": "git",
+    "url": "no-one-yet"
+  },
+  "keywords": [
+    "SHOPPING-CART"
+  ],
+  "author": "SAMUEL C. RIBEIRO",
+  "license": "MIT",
+  "dependencies": {
+    "node": "^20.14.0"
+  }
+}
