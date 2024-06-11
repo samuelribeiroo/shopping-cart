@@ -1,0 +1,145 @@
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  text-rendering: optimizeLegibility;
+  image-rendering: optimizeQuality;
+  font-synthesis: none;
+  font-size: 81.25%; /* 13px */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-adjust: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+:root {
+  --text-color-primary: #f7f7f7;
+  --text-color-secondary: #e9e8e8;
+  --close-button-color: #343d46;
+  --backgroundMain: #1e1e1e;
+  --button-color: #ff204e;
+
+  --number-lg: 1.25rem;
+  --heading: 1.25rem;
+  --number-sm: 1rem;
+  --paragraph: 1rem;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--backgroundMain);
+}
+
+
+
+main {
+  display: none;
+}
+
+.header {
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text-color-primary);
+}
+
+.header span {
+  font-weight: 500;
+}
+
+main {
+  margin-left: 61%;
+}
+
+.amount-container {
+  display: flex;
+  justify-content: space-between;
+  width: 490px;
+  padding: 1.5rem;
+  color: var(--text-color-primary);
+  border-bottom: 1px solid var(--text-color-primary);
+}
+
+.cart,
+.close {
+  cursor: pointer;
+}
+
+.cart:hover {
+  filter: brightness(0.9);
+}
+
+.main-container {
+  display: grid;
+  justify-content: end;
+  grid-template-columns: repeat(2, 250px);
+  padding: 1.5rem;
+}
+.product-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.product-image {
+  width: 104px;
+  height: 104px;
+  border-radius: 8px;
+}
+
+.product-image:hover {
+  transition: all 0.2s ease-in-out;
+  transform: scale(1.1);
+}
+
+.product-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-left: -110px;
+}
+
+.increase-or-decrease {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.product-price,
+.increase-or-decrease p,
+.product-name {
+  font-size: 1.25rem;
+  color: var(--text-color-secondary);
+  letter-spacing: 0.9px;
+}
+
+.increase-or-decrease button {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+}
+
+#plus {
+  background: none;
+  border: 1.8px solid var(--button-color);
+}
+
+#minus {
+  background: none;
+  border: 1.8px solid #373a40;
+}
+
+#plus:hover,
+#minus:hover {
+  cursor: pointer;
+}
