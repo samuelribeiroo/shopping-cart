@@ -1,6 +1,7 @@
 export const productList = [
   {
     id: 1,
+    amount: 10,
     name: "Console Playstation 5 Sony, SSD 825GB, Controle sem fio DualSense, Com Mídia Física, Branco - 1214A",
     price: 3440.91,
     image:
@@ -8,6 +9,7 @@ export const productList = [
   },
   {
     id: 2,
+    amount: 5,
     name: "Notebook Asus Vivobook Go 15 E1504fa-nj836w, AMD Ryzen 5 7520u, 2,8 Ghz 8GB, 512GB SSD",
     price: 2414.87,
     image:
@@ -15,6 +17,7 @@ export const productList = [
   },
   {
     id: 3,
+    amount: 4,
     name: "Mouse Sem Fio Logitech Lift, 4000 DPI, 6 Botões, Bluetooth, Ergonômico, USB",
     price: 299.99,
     image:
@@ -22,6 +25,7 @@ export const productList = [
   },
   {
     id: 4,
+    amount: 8,
     name: "Memória RAM para Notebook Kingston Fury Impact, 16GB, 3200MHz, DDR4, CL20 ",
     price: 279.99,
     image:
@@ -29,6 +33,7 @@ export const productList = [
   },
   {
     id: 5,
+    amount: 9,
     name: "Teclado Mecânico Gamer Redragon Keyboard Dragonborn, RGB, Switch Blue, ABNT2",
     price: 259.99,
     image:
@@ -36,6 +41,7 @@ export const productList = [
   },
   {
     id: 6,
+    amount: 8,
     name: "Placa de Vídeo RTX 3060 Ventus 2X MSI NVIDIA GeForce, 12GB GDDR6, DLSS, Ray Tracing ",
     price: 2029.0,
     image:
@@ -43,6 +49,7 @@ export const productList = [
   },
   {
     id: 7,
+    amount: 12,
     name: "Son Goku Fess God Blue Dragon Ball Super Bandai",
     price: 215.91,
     image:
