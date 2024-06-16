@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
   <link rel="stylesheet" href="./styles/style.css">
   <link rel="stylesheet" href="./styles/responsive.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,31 +15,40 @@
 </head>
 
 <body>
-  <header class="header">
-    <img src="./assets/Vector.svg" alt="" srcset="" class="cart">
+  <header>
+    <img src="./assets/cart.svg" alt="Cart Shopping icon" aria-label="Icone do carrinho de compras" fetchpriority='high' class="cart-img">
   </header>
-  <main>
-    <div class="amount-container">
-      <h2><span class="cart-amount"></span></h2>
-      <img src="./assets/Close.svg" alt="" srcset="" class="close">
+  <main class="main-container">
+    <div class="cart-amount-container">
+      <h3>Seu carrinho tem<strong class="cart-amount"></strong></h3>
     </div>
-    <aside class="main-container">
-      <div class="product-container">
-      </div>
-      <div class="product-detail">
-        <!-- <span class="increase-or-decrease">
-          <button id="minus" disabled>
-            <img src="./assets/Minus.svg" alt="Decrease Quantity" fetchpriority="high" aria-label="Diminuir Quantidade">
-          </button>
-          <p>1</p>
-          <button id="plus">
-            <img src="./assets/Plus.svg" alt="Increase Quantity" fetchpriority="high" aria-label="Aumentar Quantidade">
-          </button>
-        </span> -->
-      </div>
+    <aside>
+      <section class="product-container">
+      </section>
     </aside>
   </main>
-
+  <section class="total-value-container">
+    <div class="total">
+      <h2>Total: </h2>
+      <p id="total"></p>
+    </div>
+    <span class="discount">
+      <img src="./assets/Tag.svg" fetchpriority="high" alt="" <p>Adicionar cupom</p>
+    </span>
+    <a href="#">
+      <button class="buy-cta">
+        FINALIZAR COMPRA
+      </button>
+    </a>
+  </section>
+  <footer>
+    <a href="https://github.com/samuelribeiroo" target="_blank">
+      <img src="./assets/github-svg.svg" fetchpriority="high" alt="">
+    </a>
+    <a href="https://www.linkedin.com/in/samuel-ribeiro-dev/" target="_blank">
+      <img src="./assets/linkeding-svg.svg" fetchpriority="high" alt="">
+    </a>
+  </footer>
   <script type="module" src="./app.js"></script>
 </body>
 
