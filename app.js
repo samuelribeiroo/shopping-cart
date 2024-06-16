@@ -8,8 +8,6 @@ const productAmount = product.map(({ amount }) => amount);
 
 const productImage = product.map(({ image }) => image);
 
-const mainContainer = document.querySelector("main");
-
 const productContainer = document.querySelector(".product-container");
 
 const formatCurrency = price => {
@@ -21,19 +19,18 @@ const formatCurrency = price => {
   return format;
 };
 
+const getTotalValue = product.reduce((sum, acc) => {
+  return (sum += acc.price);
+}, 0);
+
 const cartAmountItems = document.querySelector(".cart-amount");
-cartAmountItems.textContent = `Seu carrinho tem ${product.length} items`;
+cartAmountItems.textContent = ` ${product.length} items.`;
 
-const cartOpenButton = document.querySelector(".cart");
-const cartCloseButton = document.querySelector(".close");
+const productImageContainer = document.createElement("div");
+productImageContainer.classList.add("product-image-container");
 
-cartOpenButton.addEventListener("click", () => {
-  mainContainer.style.display = "block";
-});
-
-cartCloseButton.addEventListener("click", () => {
-  mainContainer.style.display = "none";
-});
+const productDetailsGroup = document.createElement("div");
+productDetailsGroup.classList.add("product-details-group");
 
 const displayProductImage = productImage.forEach((img, index) => {
   const image = document.createElement("img");
@@ -43,20 +40,23 @@ const displayProductImage = productImage.forEach((img, index) => {
   image.alt = `ID DO PRODUTO: ${productID[index]}`;
   image.classList.add("product-image");
   image.fetchPriority = "high";
-  productContainer.appendChild(image);
+  productImageContainer.appendChild(image);
+  productContainer.appendChild(productImageContainer);
 });
 
 const displayProductInfo = product.forEach(({ name, price }, index) => {
   const productTitle = document.createElement("h1");
   productTitle.classList.add("product-name");
   productTitle.textContent = name;
-  productContainer.appendChild(productTitle);
+  productDetailsGroup.appendChild(productTitle);
 
-  const productDetailsGroup = document.createElement("div");
-  productDetailsGroup.classList.add("product-details-group");
-
-  const handleChangeAmountContainer = document.createElement("div");
+  const handleChangeAmountContainer = document.createElement("span");
   handleChangeAmountContainer.classList.add("increase-or-decrease");
+
+  const priceTag = document.createElement("p");
+  priceTag.classList.add("product-price");
+  priceTag.textContent = `${formatCurrency(price)}`;
+  handleChangeAmountContainer.appendChild(priceTag);
 
   const decreaseButton = document.createElement("button");
   decreaseButton.id = "minus";
@@ -76,18 +76,13 @@ const displayProductInfo = product.forEach(({ name, price }, index) => {
   increaseButton.style.cursor = "pointer";
   handleChangeAmountContainer.appendChild(increaseButton);
 
-  const priceTag = document.createElement("p");
-  priceTag.classList.add("product-price");
-  priceTag.textContent = `${formatCurrency(price)}`;
-  productContainer.appendChild(priceTag);
-
-  productDetailsGroup.appendChild(priceTag);
   productDetailsGroup.appendChild(handleChangeAmountContainer);
   productContainer.appendChild(productDetailsGroup);
 });
 
-const showCart = () => {
-  displayProductImage, displayProductInfo;
-};
+const totalPrice = document.getElementById("total");
+totalPrice.textContent = formatCurrency(getTotalValue);
+
+const showCart = () => { displayProductImage, displayProductInfo };
 
 showCart();
